@@ -9,6 +9,7 @@ if sys.version_info >= (3, 8):
 else:
     from typing_extensions import Final
 
+from black.mode import Mode
 from black.nodes import (
     CLOSING_BRACKETS,
     STANDALONE_COMMENT,
@@ -136,14 +137,14 @@ def make_comment(content: str) -> str:
     return "#" + content
 
 
-def normalize_fmt_off(node: Node) -> None:
+def normalize_fmt_off(node: Node, mode: Mode) -> None:
     """Convert content between `# fmt: off`/`# fmt: on` into standalone comments."""
     try_again = True
     while try_again:
         try_again = convert_one_fmt_off_pair(node)
 
 
-def convert_one_fmt_off_pair(node: Node) -> bool:
+def convert_one_fmt_off_pair(node: Node, mode: Mode) -> bool:
     """Convert content of a single `# fmt: off`/`# fmt: on` into a standalone comment.
 
     Returns True if a pair was converted.
@@ -185,7 +186,7 @@ def convert_one_fmt_off_pair(node: Node) -> bool:
             if comment.value in FMT_OFF:
                 hidden_value = comment.value + "\n" + hidden_value
             if comment.value in FMT_SKIP:
-                hidden_value += "  " + comment.value
+                hidden_value += " " * mode.comment_spaces + comment.value
             if hidden_value.endswith("\n"):
                 # That happens when one of the `ignored_nodes` ended with a NEWLINE
                 # leaf (possibly followed by a DEDENT).
