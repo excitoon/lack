@@ -16,11 +16,11 @@ from typing import Any, Iterable, Optional, Set
 
 from mypy_extensions import mypyc_attr
 
-from black import WriteBack, format_file_in_place
-from black.cache import Cache, filter_cached, read_cache, write_cache
-from black.mode import Mode
-from black.output import err
-from black.report import Changed, Report
+from lack import WriteBack, format_file_in_place
+from lack.cache import Cache, filter_cached, read_cache, write_cache
+from lack.mode import Mode
+from lack.output import err
+from lack.report import Changed, Report
 
 
 def maybe_install_uvloop() -> None:

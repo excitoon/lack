@@ -1,11 +1,11 @@
 from dataclasses import dataclass
 from typing import Iterator, TypeVar, Union
 
-from black.nodes import Visitor
-from black.output import out
-from black.parsing import lib2to3_parse
-from blib2to3.pgen2 import token
-from blib2to3.pytree import Leaf, Node, type_repr
+from lack.nodes import Visitor
+from lack.output import out
+from lack.parsing import lib2to3_parse
+from lib2to3.pgen2 import token
+from lib2to3.pytree import Leaf, Node, type_repr
 
 LN = Union[Leaf, Node]
 T = TypeVar("T")

@@ -11,14 +11,14 @@ if sys.version_info < (3, 8):
 else:
     from typing import Final
 
-from black.mode import VERSION_TO_FEATURES, Feature, TargetVersion, supports_feature
-from black.nodes import syms
-from blib2to3 import pygram
-from blib2to3.pgen2 import driver
-from blib2to3.pgen2.grammar import Grammar
-from blib2to3.pgen2.parse import ParseError
-from blib2to3.pgen2.tokenize import TokenError
-from blib2to3.pytree import Leaf, Node
+from lack.mode import VERSION_TO_FEATURES, Feature, TargetVersion, supports_feature
+from lack.nodes import syms
+from lib2to3 import pygram
+from lib2to3.pgen2 import driver
+from lib2to3.pgen2.grammar import Grammar
+from lib2to3.pgen2.parse import ParseError
+from lib2to3.pgen2.tokenize import TokenError
+from lib2to3.pytree import Leaf, Node
 
 ast3: Any
 

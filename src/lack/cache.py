@@ -8,8 +8,8 @@ from typing import Dict, Iterable, Set, Tuple
 
 from platformdirs import user_cache_dir
 
-from _black_version import version as __version__
-from black.mode import Mode
+from _lack_version import version as __version__
+from lack.mode import Mode
 
 # types
 Timestamp = float
@@ -19,11 +19,11 @@ Cache = Dict[str, CacheInfo]
 
 
 def get_cache_dir() -> Path:
-    """Get the cache directory used by black.
+    """Get the cache directory used by lack.
 
     Users can customize this directory on all systems using `BLACK_CACHE_DIR`
     environment variable. By default, the cache directory is the user cache directory
-    under the black application.
+    under the lack application.
 
     This result is immediately set to a constant `black.cache.CACHE_DIR` as to avoid
     repeated calls.
