@@ -17,7 +17,7 @@ if sys.version_info < (3, 8):
 else:
     from typing import Final
 
-from black.const import DEFAULT_COMMENT_SPACES, DEFAULT_LINE_LENGTH
+from lack.const import DEFAULT_COMMENT_SPACES, DEFAULT_LINE_LENGTH
 
 
 class TargetVersion(Enum):

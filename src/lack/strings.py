@@ -7,14 +7,14 @@ import sys
 from functools import lru_cache
 from typing import List, Match, Pattern
 
-from blib2to3.pytree import Leaf
+from llib2to3.pytree import Leaf
 
 if sys.version_info < (3, 8):
     from typing_extensions import Final
 else:
     from typing import Final
 
-from black._width_table import WIDTH_TABLE
+from lack._width_table import WIDTH_TABLE
 
 STRING_PREFIX_CHARS: Final = "furbFURB"  # All possible string prefix characters.
 STRING_PREFIX_RE: Final = re.compile(

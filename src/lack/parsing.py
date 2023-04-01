@@ -11,14 +11,14 @@ if sys.version_info < (3, 8):
 else:
     from typing import Final
 
-from black.mode import VERSION_TO_FEATURES, Feature, TargetVersion, supports_feature
-from black.nodes import syms
-from blib2to3 import pygram
-from blib2to3.pgen2 import driver
-from blib2to3.pgen2.grammar import Grammar
-from blib2to3.pgen2.parse import ParseError
-from blib2to3.pgen2.tokenize import TokenError
-from blib2to3.pytree import Leaf, Node
+from lack.mode import VERSION_TO_FEATURES, Feature, TargetVersion, supports_feature
+from lack.nodes import syms
+from llib2to3 import pygram
+from llib2to3.pgen2 import driver
+from llib2to3.pgen2.grammar import Grammar
+from llib2to3.pgen2.parse import ParseError
+from llib2to3.pgen2.tokenize import TokenError
+from llib2to3.pytree import Leaf, Node
 
 ast3: Any
 
@@ -81,8 +81,8 @@ def get_grammars(target_versions: Set[TargetVersion]) -> List[Grammar]:
     return grammars
 
 
-def lib2to3_parse(src_txt: str, target_versions: Iterable[TargetVersion] = ()) -> Node:
-    """Given a string with source, return the lib2to3 Node."""
+def llib2to3_parse(src_txt: str, target_versions: Iterable[TargetVersion] = ()) -> Node:
+    """Given a string with source, return the llib2to3 Node."""
     if not src_txt.endswith("\n"):
         src_txt += "\n"
 
@@ -141,8 +141,8 @@ def matches_grammar(src_txt: str, grammar: Grammar) -> bool:
         return True
 
 
-def lib2to3_unparse(node: Node) -> str:
-    """Given a lib2to3 node, return its string representation."""
+def llib2to3_unparse(node: Node) -> str:
+    """Given a llib2to3 node, return its string representation."""
     code = str(node)
     return code
 

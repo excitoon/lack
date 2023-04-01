@@ -1,5 +1,5 @@
 """
-blib2to3 Node/Leaf transformation-related utility functions.
+llib2to3 Node/Leaf transformation-related utility functions.
 """
 
 import sys
@@ -16,12 +16,12 @@ else:
 
 from mypy_extensions import mypyc_attr
 
-from black.cache import CACHE_DIR
-from black.mode import Mode
-from black.strings import has_triple_quotes
-from blib2to3 import pygram
-from blib2to3.pgen2 import token
-from blib2to3.pytree import NL, Leaf, Node, type_repr
+from lack.cache import CACHE_DIR
+from lack.mode import Mode
+from lack.strings import has_triple_quotes
+from llib2to3 import pygram
+from llib2to3.pgen2 import token
+from llib2to3.pytree import NL, Leaf, Node, type_repr
 
 pygram.initialize(CACHE_DIR)
 syms: Final = pygram.python_symbols
@@ -143,7 +143,7 @@ RARROW = 55
 
 @mypyc_attr(allow_interpreted_subclasses=True)
 class Visitor(Generic[T]):
-    """Basic lib2to3 visitor that yields things of type `T` on `visit()`."""
+    """Basic llib2to3 visitor that yields things of type `T` on `visit()`."""
 
     def visit(self, node: LN) -> Iterator[T]:
         """Main method to visit `node` and its children.
